@@ -19,7 +19,6 @@ inputs:
   command:
     required: false
     description: "Command to run your tests"
-    default: "pytest -s tests"
   agent_version:
     required: false
     description: "Use a specific version of the Thundra Agent"

@@ -19,5 +19,9 @@ export default async function run(thundraDep: string) {
     }
     await Helper.installThundraPythonAgent(thundraDep)
     core.info(`[THUNDRA] ${thundraDep} installed...`)
-    await runTests(command)
+    if (command) {
+        await runTests(command)
+    } else {
+        core.info('[THUNDRA] Instrumentation has been completed...')
+    }
 }

@@ -219,7 +219,12 @@ function run(thundraDep) {
         }
         yield Helper.installThundraPythonAgent(thundraDep);
         core.info(`[THUNDRA] ${thundraDep} installed...`);
-        yield (0, execute_test_1.runTests)(command);
+        if (command) {
+            yield (0, execute_test_1.runTests)(command);
+        }
+        else {
+            core.info('[THUNDRA] Instrumentation has been completed...');
+        }
     });
 }
 exports.default = run;
