@@ -9,7 +9,9 @@ const actions = {
 }
 
 export function isValidFramework(framework: string): boolean {
-    return FrameworkTypes[framework as keyof typeof FrameworkTypes] !== undefined
+    const res =
+        FrameworkTypes[framework as keyof typeof FrameworkTypes] !== undefined
+    return res
 }
 
 export function getAction(framework: string): Function | undefined {
