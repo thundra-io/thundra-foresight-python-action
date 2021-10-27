@@ -10,7 +10,7 @@ inputs:
     description: "Thundra's Test Project ID"
   test_disable:
     required: false
-    description: : "Deactivate Thundra action"
+    description: "Deactivate Thundra action"
     default: false
   framework:
     required: false
