@@ -297,8 +297,7 @@ const project_id = core.getInput('project_id');
 const framework = core.getInput('framework').toLowerCase();
 const agent_version = core.getInput('agent_version');
 const test_disable = core.getInput('test_disable');
-// const thundraDep = agent_version ? `thundra==${agent_version}` : 'thundra'
-const thundraDep = 'thundra@git+https://github.com/thundra-io/thundra-agent-python.git@foresight-test-runner';
+const thundraDep = agent_version ? `thundra==${agent_version}` : 'thundra';
 if (test_disable.toUpperCase() === 'TRUE') {
     core.warning('[THUNDRA] Instrumentation is not on board due to setting test disable...');
     core.exportVariable(constants_1.THUNDRA_SPECIFIC_ENV_VARS.test_disable, true);
