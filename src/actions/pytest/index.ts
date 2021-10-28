@@ -13,7 +13,7 @@ export default async function run(thundraDep: string) {
     }
     const check_pytest_installed = await Helper.checkPytestInstallation()
     if (!check_pytest_installed) {
-        core.warning('[THUNDRA] To install thundra, pytest is required. Please ensure your workspace has pytest...')
+        core.warning('[THUNDRA] To install Thundra, pytest is required. Please ensure your workspace has pytest...')
         core.warning('[THUNDRA] Instrumentation failed due to missing pytest...')
         process.exit(core.ExitCode.Success)
     }
