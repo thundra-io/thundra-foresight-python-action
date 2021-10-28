@@ -7,7 +7,7 @@ const command: string = core.getInput('command')
 export default async function run(thundraDep: string) {
     const check_pip_installed = await Helper.checkPipInstallation()
     if (!check_pip_installed) {
-        core.warning('[THUNDRA] To install thundra, pip is required. Please ensure your workspace has pip...')
+        core.warning('[THUNDRA] To install Thundra, pip is required. Please ensure your workspace has pip...')
         core.warning('[THUNDRA] Instrumentation failed due to missing pip...')
         process.exit(core.ExitCode.Success)
     }
