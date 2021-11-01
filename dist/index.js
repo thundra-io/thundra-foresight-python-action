@@ -207,13 +207,13 @@ function run(thundraDep) {
     return __awaiter(this, void 0, void 0, function* () {
         const check_pip_installed = yield Helper.checkPipInstallation();
         if (!check_pip_installed) {
-            core.warning('[THUNDRA] To install thundra, pip is required. Please ensure your workspace has pip...');
+            core.warning('[THUNDRA] To install Thundra, pip is required. Please ensure your workspace has pip...');
             core.warning('[THUNDRA] Instrumentation failed due to missing pip...');
             process.exit(core.ExitCode.Success);
         }
         const check_pytest_installed = yield Helper.checkPytestInstallation();
         if (!check_pytest_installed) {
-            core.warning('[THUNDRA] To install thundra, pytest is required. Please ensure your workspace has pytest...');
+            core.warning('[THUNDRA] To install Thundra, pytest is required. Please ensure your workspace has pytest...');
             core.warning('[THUNDRA] Instrumentation failed due to missing pytest...');
             process.exit(core.ExitCode.Success);
         }
@@ -297,7 +297,7 @@ const project_id = core.getInput('project_id');
 const framework = core.getInput('framework').toLowerCase();
 const agent_version = core.getInput('agent_version');
 const test_disable = core.getInput('test_disable');
-const thundraDep = agent_version ? `thundra==${agent_version}` : 'thundra';
+const thundraDep = 'thundra@git+https://github.com/thundra-io/thundra-agent-python.git@foresight-test-runner';
 if (test_disable.toUpperCase() === 'TRUE') {
     core.warning('[THUNDRA] Instrumentation is not on board due to setting test disable...');
     core.exportVariable(constants_1.THUNDRA_SPECIFIC_ENV_VARS.test_disable, true);

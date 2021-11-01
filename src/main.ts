@@ -12,7 +12,8 @@ const framework: string = core.getInput('framework').toLowerCase()
 const agent_version: string = core.getInput('agent_version')
 const test_disable: string = core.getInput('test_disable')
 
-const thundraDep = agent_version ? `thundra==${agent_version}` : 'thundra'
+const thundraDep =
+    'thundra@git+https://github.com/thundra-io/thundra-agent-python.git@foresight-test-runner'
 
 if (test_disable.toUpperCase() === 'TRUE') {
     core.warning(
