@@ -207,15 +207,11 @@ function run(thundraDep) {
     return __awaiter(this, void 0, void 0, function* () {
         const check_pip_installed = yield Helper.checkPipInstallation();
         if (!check_pip_installed) {
-            core.warning('[THUNDRA] To install thundra, pip is required. Please ensure your workspace has pip...');
-            core.warning('[THUNDRA] Instrumentation failed due to missing pip...');
-            process.exit(core.ExitCode.Success);
+            core.warning('[THUNDRA] To install Thundra, pip is required. Please ensure your workspace has pip...');
         }
         const check_pytest_installed = yield Helper.checkPytestInstallation();
         if (!check_pytest_installed) {
-            core.warning('[THUNDRA] To install thundra, pytest is required. Please ensure your workspace has pytest...');
-            core.warning('[THUNDRA] Instrumentation failed due to missing pytest...');
-            process.exit(core.ExitCode.Success);
+            core.warning('[THUNDRA] To install Thundra, pytest is required. Please ensure your workspace has pytest...');
         }
         yield Helper.installThundraPythonAgent(thundraDep);
         core.info(`[THUNDRA] ${thundraDep} installed...`);
