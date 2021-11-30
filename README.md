@@ -83,7 +83,7 @@ jobs:
           apikey: ${{ secrets.THUNDRA_APIKEY }}
           project_id: ${{ secrets.THUNDRA_PROJECT_ID }}
       
-      - name: Test Run
+      - name: Run Tests
         run: pytest
 
 ```
