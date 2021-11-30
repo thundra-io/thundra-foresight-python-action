@@ -35,8 +35,10 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
 
-      - name: Install system requirements
-        run: pip install pytest
+      - name: Install Test Dependencies
+        run: |
+            pip install pytest
+            pip install -r requirements.txt
 
       - name: Install Thundra Python Agent
         uses: thundra-io/thundra-foresight-python-action@v1
