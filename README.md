@@ -91,5 +91,5 @@ Make sure to follow the instruction in the repository.
 | project_id                | Required          | ---                      | Your project id from Thundra. Will be used to filter and classify your testruns.
 | test_disable              | Optional          | False                    | Disable Thundra 
 | framework                 | Optional          | pytest                   | Test framework type. Currently only pytest framework is allowed.
-| command                   | Optional          | ---                      | The Npm / Yarn command you want to run. 
+| command                   | Optional          | ---                      | The pytest command you want to run. 
 | agent_version             | Optional          | ---                      | A specific version Thundra Python Agent you want to use should be defined here. If this value is not specified latest version of Thundra Python Agent will be use.
