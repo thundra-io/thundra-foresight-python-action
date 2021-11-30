@@ -45,7 +45,7 @@ jobs:
         with:
           apikey: ${{ secrets.THUNDRA_APIKEY }}
           project_id: ${{ secrets.THUNDRA_PROJECT_ID }}
-          command: pytest ${TEST_FOLDER}
+          command: pytest
 ```
 
 ### Running the Command Separately
@@ -59,18 +59,33 @@ Action after whole dependencies installing steps is all you need with using THUN
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.9]
     
     steps:
+      - uses: actions/checkout@v2
       
-      => Predefined steps for setting up and installing both system and test dependencies
+        # Specify your python install step
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
 
+      - name: Install Test Dependencies
+        run: |
+            pip install pytest
+            pip install -r requirements.txt
+      
       - name: Install Thundra Python Agent
         uses: thundra-io/thundra-foresight-python-action@v1
         with:
           apikey: ${{ secrets.THUNDRA_APIKEY }}
           project_id: ${{ secrets.THUNDRA_PROJECT_ID }}
+      
+      - name: Test Run
+        run: pytest
 
-      => Test Steps
 ```
 
 ## Known Issues
