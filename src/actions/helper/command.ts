@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import Minimist from "minimist"
 
 import ShellQuote from 'shell-quote'
