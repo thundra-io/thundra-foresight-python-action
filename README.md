@@ -39,7 +39,7 @@ jobs:
         run: pip install pytest
 
       - name: Install Thundra Python Agent
-        uses: thundra-io/thundra-foresight-js-action@v1
+        uses: thundra-io/thundra-foresight-python-action@v1
         with:
           apikey: ${{ secrets.THUNDRA_APIKEY }}
           project_id: ${{ secrets.THUNDRA_PROJECT_ID }}
@@ -63,7 +63,7 @@ jobs:
       => Predefined steps for setting up and installing both system and test dependencies
 
       - name: Install Thundra Python Agent
-        uses: thundra-io/thundra-foresight-js-action@v1
+        uses: thundra-io/thundra-foresight-python-action@v1
         with:
           apikey: ${{ secrets.THUNDRA_APIKEY }}
           project_id: ${{ secrets.THUNDRA_PROJECT_ID }}
